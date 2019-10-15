@@ -1,6 +1,7 @@
 package com.android.segunfrancis.bloggerapp.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class HeroesAdapter extends RecyclerView.Adapter<HeroesAdapter.HeroesViewHolder> {
+
+    private static final String TAG = "HeroesAdapter";
 
     Context mContext;
     List<Hero> mHeroList;
@@ -37,7 +40,7 @@ public class HeroesAdapter extends RecyclerView.Adapter<HeroesAdapter.HeroesView
     public void onBindViewHolder(@NonNull HeroesViewHolder holder, int position) {
         Hero hero = mHeroList.get(position);
         Glide.with(mContext)
-                .load(hero.getImageUrl())
+                .load(hero.getImageurl())
                 .into(holder.mImageView);
         holder.mTextView.setText(hero.getName());
     }
