@@ -39,10 +39,10 @@ public class HeroesAdapter extends RecyclerView.Adapter<HeroesAdapter.HeroesView
     @Override
     public void onBindViewHolder(@NonNull HeroesViewHolder holder, int position) {
         Hero hero = mHeroList.get(position);
+        holder.mTextView.setText(hero.getName());
         Glide.with(mContext)
                 .load(hero.getImageurl())
                 .into(holder.mImageView);
-        holder.mTextView.setText(hero.getName());
     }
 
     @Override
